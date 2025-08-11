@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-translate="site_title">Mon site</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: #2c2c2c;
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+        .lang-switcher button {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            margin-left: 8px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .lang-switcher button:hover {
+            background: #ffcc00;
+            color: #2c2c2c;
+        }
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section:nth-child(even) {
+            background: #f9f9f9;
+        }
+        h1, h2 {
+            color: #2c2c2c;
+        }
+        footer {
+            background: #2c2c2c;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body onload="setLanguage('fr')">
+
+<header>
+    <nav>
+        <a href="#home" data-translate="menu_home">Accueil</a>
+        <a href="#about" data-translate="menu_about">À propos</a>
+        <a href="#services" data-translate="menu_services">Services</a>
+        <a href="#gallery" data-translate="menu_gallery">Galerie</a>
+        <a href="#contact" data-translate="menu_contact">Contact</a>
+    </nav>
+    <div class="lang-switcher">
+        <button onclick="setLanguage('fr')">🇫🇷</button>
+        <button onclick="setLanguage('ru')">🇷🇺</button>
+        <button onclick="setLanguage('en')">🇬🇧</button>
+    </div>
+</header>
+
+<section id="home">
+    <h1 data-translate="home_title">Bienvenue</h1>
+    <p data-translate="home_text">Ceci est la page d'accueil de votre nouveau site.</p>
+</section>
+
+<section id="about">
+    <h2 data-translate="about_title">À propos</h2>
+    <p data-translate="about_text">Ici, vous pouvez présenter votre entreprise.</p>
+</section>
+
+<section id="services">
+    <h2 data-translate="services_title">Nos services</h2>
+    <p data-translate="services_text">Décrivez ce que vous offrez aux clients.</p>
+</section>
+
+<section id="gallery">
+    <h2 data-translate="gallery_title">Galerie</h2>
+    <p data-translate="gallery_text">Ajoutez des photos et vidéos de vos travaux.</p>
+</section>
+
+<section id="contact">
+    <h2 data-translate="contact_title">Contact</h2>
+    <p data-translate="contact_text">Indiquez votre adresse, téléphone et email.</p>
+</section>
+
+<footer>
+    <p data-translate="footer_text">Tous droits réservés © 2025</p>
+</footer>
+
+<script>
+    const translations = {
+        ru: {
+            site_title: "Мой сайт",
+            menu_home: "Главная",
+            menu_about: "О нас",
+            menu_services: "Услуги",
+            menu_gallery: "Галерея",
+            menu_contact: "Контакты",
+            home_title: "Добро пожаловать",
+            home_text: "Это главная страница вашего нового сайта.",
+            about_title: "О нас",
+            about_text: "Здесь будет информация о вашей компании.",
+            services_title: "Наши услуги",
+            services_text: "Опишите, что вы предлагаете клиентам.",
+            gallery_title: "Галерея",
+            gallery_text: "Добавьте фото и видео ваших работ.",
+            contact_title: "Контакты",
+            contact_text: "Укажите адрес, телефон и email.",
+            footer_text: "Все права защищены © 2025"
+        },
+        fr: {
+            site_title: "Mon site",
+            menu_home: "Accueil",
+            menu_about: "À propos",
+            menu_services: "Services",
+            menu_gallery: "Galerie",
+            menu_contact: "Contact",
+            home_title: "Bienvenue",
+            home_text: "Ceci est la page d'accueil de votre nouveau site.",
+            about_title: "À propos",
+            about_text: "Ici, vous pouvez présenter votre entreprise.",
+            services_title: "Nos services",
+            services_text: "Décrivez ce que vous offrez aux clients.",
+            gallery_title: "Galerie",
+            gallery_text: "Ajoutez des photos et vidéos de vos travaux.",
+            contact_title: "Contact",
+            contact_text: "Indiquez votre adresse, téléphone et email.",
+            footer_text: "Tous droits réservés © 2025"
+        },
+        en: {
+            site_title: "My Website",
+            menu_home: "Home",
+            menu_about: "About Us",
+            menu_services: "Services",
+            menu_gallery: "Gallery",
+            menu_contact: "Contact",
+            home_title: "Welcome",
+            home_text: "This is the homepage of your new site.",
+            about_title: "About Us",
+            about_text: "Here will be information about your company.",
+            services_title: "Our Services",
+            services_text: "Describe what you offer to customers.",
+            gallery_title: "Gallery",
+            gallery_text: "Add photos and videos of your work.",
+            contact_title: "Contact",
+            contact_text: "Enter your address, phone and email.",
+            footer_text: "All rights reserved © 2025"
+        }
+    };
+
+    function setLanguage(lang) {
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+    }
+
+    // Плавное появление секций при скролле
+    function onScroll() {
+        const sections = document.querySelectorAll('section');
+        const triggerBottom = window.innerHeight * 0.85;
+
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+
+            if(sectionTop < triggerBottom) {
+                section.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('load', onScroll);
+</script>
+
+</body>
+</html>
